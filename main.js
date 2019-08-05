@@ -27,6 +27,7 @@ if (!('fetch' in window)) {
     // return;
   } else{
       console.log("fetch good to go!")
+      document.getElementById('fetchStatus').innerHTML = "Fetch good to go!";
   }
   // We can safely use fetch from now on
 
@@ -45,6 +46,7 @@ function checkVersion(){
     .then(function(response){
         console.log("Data Fetched!");
         console.log(response)
+  
     })
     .catch(function(error){
         console.log("Shit broke!");
