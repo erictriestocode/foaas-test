@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css" class="href">
+    <link href="https://fonts.googleapis.com/css?family=Lacquer|Saira+Stencil+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>FOAAS Test</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">
+            <h1 id="mainTitle">FOAAS</h1>
+        </div>
+        <div class="buttonBar">
+            <button id="test" onclick="testClick()" class="btn-large grey darken-3">TEST BUTTON</button>
+            <button id="clear" onclick="clearResults()" class="btn-large grey darken-3">CLEAR</button>
+            <button id="version" onclick="checkVersion()" class="btn-large grey darken-3">FOAAS Version</button>
+        </div>
+        <!-- <div class="formBody input-field inline">
+            <form action="submit">
+                TO:
+                <input type="text" name="to" >
+                FROM:
+                <input type="text" name="from">
+            </form>
+        </div> -->
+        <hr>
+        <div id="results">
+
+        </div>
+    </div>
+</body>
+<script src="main.js"></script>
+</html>
