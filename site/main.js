@@ -17,7 +17,7 @@
 const versionURL = "http://foaas.com/version";
 const urlOptions = {
     method: 'GET',
-    mode: 'no-cors',
+    mode: 'no-cors'
     // Accept: 'application/json'
 }
 
