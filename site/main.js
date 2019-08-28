@@ -14,42 +14,40 @@
 // Connection: keep-alive
 // cache-control: no-cache
 
-const versionURL = "http://foaas.com/version";
-const urlOptions = {
-    method: 'GET',
-    mode: 'no-cors'
-    // Accept: 'application/json'
-}
+
 
 //Test for fetch functionality
 if (!('fetch' in window)) {
     console.log('Fetch API not found, try including the polyfill');
     // return;
-  } else{
-      console.log("fetch good to go!")
-      document.getElementById('fetchStatus').innerHTML = "Fetch good to go!";
-  }
-  // We can safely use fetch from now on
+} else {
+    console.log("fetch good to go!")
+    document.getElementById('fetchStatus').innerHTML = "Fetch good to go!";
+}
+// We can safely use fetch from now on
 
 //Testing button
-function testClick(){
+function testClick() {
     document.getElementById('results').innerHTML = "FUCK OFF";
 }
 
-function clearResults(){
+function clearResults() {
     document.getElementById("results").innerHTML = "";
 }
 
-function checkVersion(){
+function checkVersion() {
     console.log("version checked!")
-    fetch(versionURL,urlOptions)
-    .then(function(response){
-        console.log("Data Fetched!");
-        console.log(response)
-  
+    fetch("http://foaas.com/operations", {
+        "method": "GET",
+        "headers": {
+            "cookie": "__cfduid=d3ea086c95a883df11226f89fbcd0b0d31566958073; i18next=dev",
+            "accept": "application/json"
+        }
     })
-    .catch(function(error){
-        console.log("Shit broke!");
-        console.log(error);
-    });
+        .then(response => {
+            console.log(response);
+        })
+        .catch(err => {
+            console.log(err);
+        });
 }
