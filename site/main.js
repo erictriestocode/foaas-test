@@ -21,8 +21,8 @@ if (!('fetch' in window)) {
     console.log('Fetch API not found, try including the polyfill');
     // return;
 } else {
-    console.log("fetch good to go!")
-    document.getElementById('fetchStatus').innerHTML = "Fetch good to go!";
+    // console.log("fetch good to go!")
+    // document.getElementById('fetchStatus').innerHTML = "Fetch good to go!";
 }
 // We can safely use fetch from now on
 
@@ -61,7 +61,8 @@ function getGif() {
     url = "https://api.giphy.com/v1/gifs/random?api_key=hjdE9lx9cGidHy5CN2GtAf1oyDZ9nEJN&tag=fuck&rating=R";
     console.log("gif reqested");
 
-    document.getElementById("gifResults").innerHTML = "GIF Button Clicked!"
+    document.getElementById("gifResults").innerHTML = "LOADING";
+    
     fetch(url, {
         "method": "GET",
         "headers": {}
