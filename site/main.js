@@ -35,6 +35,7 @@ function testClick() {
 function clearResults() {
     console.log("Clear Clicked!");
     document.getElementById("results").innerHTML = "";
+    document.getElementById("gifResults").innerHTML = "";
 }
 
 function checkVersion() {
@@ -47,7 +48,6 @@ function checkVersion() {
         }
     })
         .then(response => {
-            responseText = response.text();
             console.log(response);
             // console.log(responseText);
         })
@@ -58,22 +58,25 @@ function checkVersion() {
 }
 
 function getGif() {
-    url = "https://api.giphy.com/v1/gifs/trending?api_key=hjdE9lx9cGidHy5CN2GtAf1oyDZ9nEJN&limit=5&rating=R";
+    url = "https://api.giphy.com/v1/gifs/random?api_key=hjdE9lx9cGidHy5CN2GtAf1oyDZ9nEJN&tag=fuck&rating=R";
     console.log("gif reqested");
 
     document.getElementById("gifResults").innerHTML = "GIF Button Clicked!"
-//     fetch(url, {
-//         "method": "GET",
-//         "headers": {}
-//     })
-//         // .then(response = response.json())
-//         .then(response => {
-//             data = response.json();
-//             // console.log(response);
-//             console.log(data);
-//             // console.log(data.data[0])
-//         })
-//         .catch(err => {
-//             console.log(err);
-//         });
+    fetch(url, {
+        "method": "GET",
+        "headers": {}
+    })
+        .then(response => {
+            return response.json();
+        })
+        .then(json => {
+           
+            // console.log(response);
+            console.log(json);
+            document.getElementById("gifResults").innerHTML = "<img src=" + json.data.images.original.url + ">";
+            // console.log(data.data[0])
+        })
+        .catch(err => {
+            console.log(err);
+        });
 }
