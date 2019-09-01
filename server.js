@@ -4,7 +4,7 @@ const express = require("express");
 const app = express();
 const path = require('path');
 
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 
 // function handleRequest(request,response){
 //     fs.readFile(__dirname + "/site/index.html", function(err,data){
