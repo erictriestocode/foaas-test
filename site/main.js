@@ -44,7 +44,7 @@ function checkVersion() {
         "method": "GET",
         "headers": {
             // "cookie": "__cfduid=d3ea086c95a883df11226f89fbcd0b0d31566958073; i18next=dev",
-            "accept": "application/json"
+            "accept": "text/plain"
         }
     })
         .then(response => {
