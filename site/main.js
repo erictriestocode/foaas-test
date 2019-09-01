@@ -28,26 +28,52 @@ if (!('fetch' in window)) {
 
 //Testing button
 function testClick() {
+    console.log("test clicked!");
     document.getElementById('results').innerHTML = "FUCK OFF";
 }
 
 function clearResults() {
+    console.log("Clear Clicked!");
     document.getElementById("results").innerHTML = "";
 }
 
 function checkVersion() {
     console.log("version checked!")
-    fetch("http://foaas.com/operations", {
+    fetch("https://cors-anywhere.herokuapp.com/http://foaas.com/version", {
         "method": "GET",
         "headers": {
-            "cookie": "__cfduid=d3ea086c95a883df11226f89fbcd0b0d31566958073; i18next=dev",
+            // "cookie": "__cfduid=d3ea086c95a883df11226f89fbcd0b0d31566958073; i18next=dev",
             "accept": "application/json"
         }
     })
         .then(response => {
+            responseText = response.text();
             console.log(response);
+            // console.log(responseText);
         })
         .catch(err => {
+            document.getElementById("results").innerHTML = err;
             console.log(err);
         });
+}
+
+function getGif() {
+    url = "https://api.giphy.com/v1/gifs/trending?api_key=hjdE9lx9cGidHy5CN2GtAf1oyDZ9nEJN&limit=5&rating=R";
+    console.log("gif reqested");
+
+    document.getElementById("gifResults").innerHTML = "GIF Button Clicked!"
+//     fetch(url, {
+//         "method": "GET",
+//         "headers": {}
+//     })
+//         // .then(response = response.json())
+//         .then(response => {
+//             data = response.json();
+//             // console.log(response);
+//             console.log(data);
+//             // console.log(data.data[0])
+//         })
+//         .catch(err => {
+//             console.log(err);
+//         });
 }
